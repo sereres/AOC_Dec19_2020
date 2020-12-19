@@ -58,7 +58,13 @@ def RunCalculation(formatted_string):
     if True not in [type(x) == list for x in formatted_string]:
         return RunFlatCalculation(formatted_string)
     else:
-        return 9
+        flat_format = []
+        for x in formatted_string:
+            if type(x)!=list:
+                flat_format.append(x)
+            else:
+                flat_format.append(RunCalculation(x))
+        return RunFlatCalculation(flat_format)
 
 
 def RunFlatCalculation(formatted_string):

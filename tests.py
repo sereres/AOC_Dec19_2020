@@ -23,7 +23,17 @@ class TestAOCDay18(unittest.TestCase):
 
         self.assertEqual(calc_result, 12)
 
+    def testExtraLongString(self):
+       calc_result = Calculate("1 + 2 * 3 + 4 * 5 + 6")
+
+       self.assertEqual(calc_result, 71)
+
     def testReorderOps(self):
         calc_result = Calculate("3 + (3 * 2)")
 
         self.assertEqual(calc_result, 9)
+
+    def testGeneralFlatReorder(self):
+        calc_result = Calculate("2 * 3 + (4 * 5)")
+
+        self.assertEqual(calc_result, 26)
