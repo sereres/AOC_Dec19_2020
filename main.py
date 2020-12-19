@@ -49,7 +49,7 @@ def find_all_substrings(string):
 
 def Calculate(string):
     formatted_string = find_all_substrings(string)
-    print(formatted_string)
+    #print(formatted_string)
     calc = RunCalculation(formatted_string)
     return calc
 
@@ -73,8 +73,8 @@ def RunFlatCalculation(formatted_string):
 
     elif len(formatted_string) > 3:
         calc = SingleCalc(formatted_string)
-        print(calc)
-        print(formatted_string[3:])
+        #print(calc)
+        #print(formatted_string[3:])
         new_list = [str(calc)]
         [new_list.append(x) for x in formatted_string[3:]]
         calc = RunFlatCalculation(new_list)

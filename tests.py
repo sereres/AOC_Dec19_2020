@@ -37,3 +37,13 @@ class TestAOCDay18(unittest.TestCase):
         calc_result = Calculate("2 * 3 + (4 * 5)")
 
         self.assertEqual(calc_result, 26)
+
+    def testMultipleDepth(self):
+        calc_result = Calculate("1 + (2 * 3) + (4 * (5 + 6))")
+
+        self.assertEqual(calc_result, 51)
+
+    def testExtraCase(self):
+        calc_result = Calculate("((2 + 4 * 9) * (6 + 9 * 8 + 6) + 6) + 2 + 4 * 2")
+
+        self.assertEqual(calc_result,13632)
