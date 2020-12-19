@@ -22,3 +22,8 @@ class TestAOCDay18(unittest.TestCase):
         calc_result = Calculate("3 + 3 * 2")
 
         self.assertEqual(calc_result, 12)
+
+    def testReorderOps(self):
+        calc_result = Calculate("3 + (3 * 2)")
+
+        self.assertEqual(calc_result, 9)
